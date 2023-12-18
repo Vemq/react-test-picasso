@@ -1,0 +1,22 @@
+.button {
+    padding: 5px 15px;
+
+    background: white;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    color: #369;
+    font-size: 1em;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  
+  .button:hover {
+    border-color: LightSteelBlue;
+  }
+  
+  .button:active {
+    transform: translateY(2px);
+    transition: 0.1s;
+  }
+  
