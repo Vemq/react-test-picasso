@@ -1,6 +1,11 @@
+import { PropsWithChildren } from 'react';
 import styles from './Button.module.css';
 
-export default function Button({ children, onClick }) {
+type ButtonProps = PropsWithChildren<{
+  onClick: () => void;
+}>;
+
+export default function Button({ onClick, children }: ButtonProps) {
   return (
     <button
       className={styles.button}
