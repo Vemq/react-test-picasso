@@ -17,6 +17,7 @@
 - [RTK-query](https://redux-toolkit.js.org/rtk-query/overview) - инструмент извлечения и кэширования данных
 - [react-virtualized](https://vitejs.dev/) - библиотека виртуализации списков React
 - [Vite](https://vitejs.dev/) - инструментарий автоматизации рабочих процессов внутри проекта
+- [Typescript](https://www.typescriptlang.org/) - типизированный JavaScript
  
 ## Установка
 ```sh
