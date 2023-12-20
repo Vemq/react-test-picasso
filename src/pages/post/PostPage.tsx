@@ -1,15 +1,20 @@
 import { NavigateButton } from '../../features/navigate-button';
-
 import { useGetPostByIdQuery } from '../../shared/api';
 import { useParams } from 'react-router-dom';
 import styles from './PostPage.module.css';
 
 export default function PostPage() {
   const { postId } = useParams();
-  const { data, isFetching } = useGetPostByIdQuery(postId);
+  const { data, isFetching, error } = useGetPostByIdQuery(postId || '');
+
   if (isFetching) return <span>Loading...</span>;
 
+  if (error || !data) {
+    throw new Error(`Пост с номером ${postId} не найден.`);
+  }
+
   const { id, title, body } = data;
+
   return (
     <div className={styles.post}>
       <h2 className={styles.title}>

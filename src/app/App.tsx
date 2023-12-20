@@ -6,7 +6,7 @@ import {
 import { ApiProvider } from '@reduxjs/toolkit/query/react';
 import { jsonPlaceholderApi } from '../shared/api';
 
-import { PostListPage } from '../pages/posts';
+import { PostListPage } from '../pages/post-list';
 import { SinglePostPage } from '../pages/post';
 import { ErrorPage } from '../pages/error';
 

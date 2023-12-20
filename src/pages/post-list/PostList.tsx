@@ -1,16 +1,22 @@
-import React from 'react';
 import { List, WindowScroller } from 'react-virtualized';
-import { PostItem } from '../../entities/post-item/index.js';
-import { useGetAllPostsQuery } from '../../shared/api';
+import { PostItem } from '../../entities/post-item/index.ts';
+import { useGetAllPostsQuery } from '../../shared/api/index.ts';
 
 export default function PostList() {
   const { data, isFetching } = useGetAllPostsQuery();
 
-  const rowRenderer = ({ index, key, style }) => {
-    const { id, title, body } = data[index];
+  const rowRenderer: List['props']['rowRenderer'] = ({ index, key, style }) => {
+    const { id, title, body } = data![index];
     return (
-      <div key={key} style={style}>
-        <PostItem id={id} title={title} description={body} />
+      <div
+        key={key}
+        style={style}
+      >
+        <PostItem
+          id={id}
+          title={title}
+          description={body}
+        />
       </div>
     );
   };
@@ -26,11 +32,11 @@ export default function PostList() {
             <List
               autoHeight
               height={height}
-              rowCount={data.length}
+              rowCount={data?.length || 0}
               rowHeight={120}
               rowRenderer={rowRenderer}
               scrollTop={scrollTop}
-              width={1000} 
+              width={1000}
             />
           )}
         </WindowScroller>

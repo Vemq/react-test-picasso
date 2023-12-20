@@ -1,2 +1,2 @@
-import PostPage from './PostPage.jsx';
+import PostPage from './PostPage.tsx';
 export { PostPage as SinglePostPage };
